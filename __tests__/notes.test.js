@@ -2,6 +2,7 @@ const fs = require("fs");
 const {
   createNewNote,
   validateNote,
+  deleteById
 } = require("../lib/notes.js");
 const db = require("../data/db.json");
 
@@ -32,6 +33,15 @@ test("validates note values", () => {
 
   const result = validateNote(note);
   const result2 = validateNote(invalidNote);
+
+  expect(result).toBe(true);
+  expect(result2).toBe(false);
+});
+
+test("removes note entry", () =>{
+  createNewNote({ title: "Bob's Note", text: "I love bob", id:"1234" }, db);
+  const result = deleteById("1234", db);
+  const result2 = deleteById("4321", db);
 
   expect(result).toBe(true);
   expect(result2).toBe(false);
