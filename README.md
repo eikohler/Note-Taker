@@ -4,3 +4,4 @@ I was tasked with creating a note taker application using express js to build a 
 The application was tested using jest module. Each note entry has a unique ID generated through uuid module.
 
 Application URL: https://blooming-garden-85714.herokuapp.com/
+![Screen Shot](screenshots/screenshot.JPG?raw=true "Screen Shot")
